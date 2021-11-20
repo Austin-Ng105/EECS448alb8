@@ -1,0 +1,29 @@
+<html>
+    <body>
+    <form>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password"><br>
+        <label for="vPassword">Input password again:</label><br>
+        <input type="text" id="vPassword" name="vPassword"><br><br>
+        <input type="submit" value="Validate" onclick="test(document.getElementById('password'),document.getElementById('vPassword'))">
+    </form>
+    <script>
+
+        function test(pass1, pass2){
+            //check length and matching
+            if((pass1.value.length >= 8) && (pass2.value.length >= 8)) {
+                if(pass1.value != pass2.value){
+                    alert("the passwords entered don't match");
+                } else if (pass1.value == pass2.value){
+                    alert("the passwords entered match");
+                }
+            } else {
+                alert("the passwords are not at least 8 characters long")
+            }
+    
+           
+
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+    <style>
+        p.textBlock {
+            border-style: solid;
+            border-width: 5px 20px;
+        }
+    </style>
+    <body>
+        <form>
+            <!--Border Colors-->
+            <label for="BorderR">Border Red (0-255):</label><br>
+            <input type="text" id="BorderR" name="BorderR"><br>
+            <label for="BorderG">Border Green (0-255):</label><br>
+            <input type="text" id="BorderG" name="BorderG"><br>
+            <label for="BorderB">Border Blue(0-255):</label><br>
+            <input type="text" id="BorderB" name="BorderB"><br>
+
+            <!--Border Width-->
+            <label for="BorderW">Border Width:</label><br>
+            <input type="text" id="BorderW" name="BorderW"><br>
+
+            <!--Background Colors-->
+            <label for="BackgroundR">Background color(0-255):</label><br>
+            <input type="text" id="BackgroundR" name="BackgroundR"><br>
+            <label for="BackgroundG">Background color(0-255):</label><br>
+            <input type="text" id="BackgroundG" name="BackgroundG"><br>
+            <label for="BackgroundB">Background color(0-255):</label><br>
+            <input type="text" id="BackgroundB" name="BackgroundB"><br>
+            <input type="button" value="Change" onclick="borderChanges(document.getElementById('BorderR'), document.getElementById('BorderG'),document.getElementById('BorderB'),document.getElementById('BorderW'),
+                                                                           document.getElementById('BackgroundR'),document.getElementById('BackgroundG'),document.getElementById('BackgroundB'))">
+        </form>
+        <p id="textBlock">
+            Change the backgroud color <br>
+            Change the border color <br>
+            Change the border width <br>
+        </p>
+    </body>
+    <script type="text/javascript">
+        // br = border, bg = background, R = red, G =green, B = blue, W = width
+        function borderChanges(brR,brG, brB, brW, bgR,bgG,bgB){
+            colorChangeBackground(bgR, bgG, bgB);
+            colorChangeBorder(brR,brG, brB);
+            changeBorderWidth(brW);
+        }
+        function changeBorderWidth(t1) {
+            var textChange = document.getElementById("textBlock");
+            textChange.style.borderWidth = t1.value;
+        }
+
+        function colorChangeBackground(t1, t2, t3) {
+            var textChange = document.getElementById("textBlock");
+            textChange.style.backgroundColor = "rgb(" + t1.value + " , " + t2.value + " , " + t3.value + ")";
+        }
+        function colorChangeBorder(t1, t2, t3) {
+            var textChange = document.getElementById("textBlock");
+            textChange.style.borderColor = "rgb(" + t1.value + " , " + t2.value + " , " + t3.value + ")";
+        }
+
+    </script>
+
+
+
+</html>
